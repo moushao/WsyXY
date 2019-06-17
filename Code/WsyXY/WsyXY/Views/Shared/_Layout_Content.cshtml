@@ -1,0 +1,46 @@
+﻿<!doctype html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <script src="/third/boot.js" type="text/javascript"></script>
+    <script src="~/js/common/BDC.js"></script>
+    @*<link href="/res/third-party/scrollbar/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css" />
+        <script src="/res/third-party/scrollbar/jquery.mCustomScrollbar.concat.min.js" type="text/javascript"></script>*@
+
+    <link href="/third/miniui/themes/bootstrap/skin.css" rel="stylesheet" type="text/css" />
+    @*<link href="/layout/res/menu/menu.css" rel="stylesheet" type="text/css" />
+        <script src="/layout/res/menu/menu.js" type="text/javascript"></script>
+        <script src="/layout/res/menutip.js" type="text/javascript"></script>*@
+    <script src="/res/third-party/swfupload/swfupload.js"></script>
+    @*<link href="/layout/res/tabs.css" rel="stylesheet" type="text/css" />*@
+    @*<link href="/layout/res/frame.css" rel="stylesheet" type="text/css" />*@
+    <link href="/layout/res/index.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+
+<style>
+    body {
+        background-color: white;
+        /*padding: 5px 5px 5px 5px;*/
+    }
+</style>
+    @RenderBody()
+
+    @*@RenderSection("third", required: false)*@
+</body>
+</html>
+<script>
+    $(function () {
+        top["win"] = window;
+    });
+    //获取ur后面的参数
+    function request(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return decodeURI(r[2]); return null;   
+    }
+</script>

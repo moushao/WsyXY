@@ -1,0 +1,100 @@
+﻿@{
+    Layout = null;
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>成都派沃特</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    @*<script type="text/javascript" src="/JS/Main/Index.js"></script>*@
+    <link href="~/third/miniui/themes/icons.css" rel="stylesheet" />
+    <link href="~/third/miniui/themes/default/miniui.css" rel="stylesheet" />
+    <link href="~/third/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="~/third/jquery.min.js"></script>
+    <script src="~/third/miniui/miniui.js"></script>
+    <script src="~/third/miniui/locale/zh_CN.js"></script>
+    <script src="~/layout/BDC.js"></script>
+    <script src="~/layout/miuivalidate.js"></script>
+    <script src="~/js/home/Index.js"></script>
+    
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .header {
+            background: url("/third/miniui/themes/blue/images/header.gif") repeat-x 0 -1px;
+        }
+
+        .Note {
+            background: url(Notes_Large.png) no-repeat;
+            width: 32px;
+            height: 32px;
+        }
+
+        .Reports {
+            background: url(Reports_Large.png) no-repeat;
+            width: 32px;
+            height: 32px;
+        }
+    </style>
+</head>
+<body>
+<!--Layout-->
+<div id="layout1" class="mini-layout" style="width: 100%; height: 100%;">
+    <div class="header" region="north" height="70" showSplit="false" showHeader="false">
+        <h1 style="margin: 0; padding: 15px; cursor: default; font-family: 微软雅黑, 黑体, 宋体;">派沃特服务流程管理系统</h1>
+        <div style="position: absolute; top: 18px; right: 10px;">
+            @*<a class="mini-button mini-button-iconTop" iconCls="icon-add" onclick="onQuickClick" plain="true">快捷</a>
+        <a class="mini-button mini-button-iconTop" iconCls="icon-edit" onclick="onClick" plain="true">首页</a>
+        <a class="mini-button mini-button-iconTop" iconCls="icon-date" onclick="onClick" plain="true">消息</a>
+        <a class="mini-button mini-button-iconTop" iconCls="icon-edit" onclick="onClick" plain="true">设置</a>*@
+            <a class="mini-button mini-button-iconTop" iconCls="icon-user" onclick="UserInfo();" plain="true">我日</a>
+            <a class="mini-button mini-button-iconTop" iconCls="icon-collapse" href="~/Template/工时系统操作手册.docx" plain="true">操作手册</a>
+            <a class="mini-button mini-button-iconTop" iconCls="icon-cancel" onclick="LogOut();" plain="true">退出系统</a>
+        </div>
+
+    </div>
+    <div title="south" region="south" showSplit="false" showHeader="false" height="30">
+        <div style="line-height: 28px; text-align: center; cursor: default">Copyright © 成都派沃特软件有限公司版权所有 </div>
+    </div>
+    <div title="center" region="center" style="border: 0;" bodyStyle="overflow:hidden;">
+        <!--Splitter-->
+        <div class="mini-splitter" style="width: 100%; height: 100%; text-align:left" borderStyle="border:0;">
+            <div size="180" maxSize="250" minSize="100" showCollapseButton="true" style="border: 0;">
+                <!--OutlookTree-->
+                <div id="leftTree" class="mini-outlooktree" style="text-align:left" url="/api/API_Menu/GetUserMenu?userid=1231212" onnodeclick="treeNodeClick"
+                     textField="text" idField="id" parentField="pid">
+                </div>
+
+            </div>
+            <div showCollapseButton="false" style="border: 0;">
+                <!--Tabs-->
+                <div id="mainTabs" class="mini-tabs" style="width: 100%; height: 100%;" plain="false" contextMenu="#tabsMenu">
+                    <div title="主页" showCloseButton="false" url="">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ul id="tabsMenu" class="mini-contextmenu" onbeforeopen="onBeforeOpen">
+    <li onclick="refreshCurrentTab">刷新标签页</li>
+    <li class="separator"></li>
+    <li onclick="closeTab">关闭标签页</li>
+    <li class="separator"></li>
+    <li onclick="closeAllBut">关闭其他标签页</li>
+    <li class="separator"></li>
+    <li onclick="closeAll">关闭所有标签页</li>
+    <li class="separator"></li>
+</ul>
+
+
+</body>
+</html>
