@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.5.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WsyXY.Common\WsyXY.Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="sail.zhang.core.dao">
+      <HintPath>..\..\..\..\..\CHGA\CSharp\Lib\sail.zhang.core.dao.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

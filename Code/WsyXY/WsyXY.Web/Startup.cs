@@ -1,17 +1,16 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Data;
+using System.IO;
+using System.Reflection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json.Serialization;
+using sail.zhang.core.dao;
+using WsyXY.Common;
 
-namespace WsyXY
+namespace WsyXY.Web
 {
     public class Startup
     {
@@ -67,20 +66,9 @@ namespace WsyXY
 
         public void InitConfig()
         {
-            /*ConfigClass.ConnectionStr = Configuration.GetSection("DBCon").GetSection("ConnectionStr").Value;
-            ConfigClass.RepairRoleID = Configuration.GetSection("RepairRoleID").Value;
-            ConfigClass.RepairDeptID = Configuration.GetSection("RepairDeptID").Value;
-            ConfigClass.ServiceRoleID = Configuration.GetSection("ServiceRoleID").Value;
-            ConfigClass.IsOpenEmail = Configuration.GetSection("IsOpenEmail").Value;
-            ConfigClass.EmailManagerAccount = Configuration.GetSection("EmailManagerAccount").Value;
-            ConfigClass.EmailManagerPassWord = Configuration.GetSection("EmailManagerPassWord").Value;
-            ConfigClass.WorkFlowAPIUrl = Configuration.GetSection("WorkFlowAPIUrl").Value;
+            ConfigClass.ConnectionStr = Configuration.GetSection("DBCon").GetSection("ConnectionStr").Value;
             SqlHelper.CONN_STRING_NON_DTC = ConfigClass.ConnectionStr;
             string path = AppContext.BaseDirectory;
-            //string path = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
-            ConfigClass.RootPath = path;
-            // path = path + "\\DataSet\\" + "DBSql.xml";
-            //path = path + "/DataSet/" + "DBSql.xml";
             path = Path.Combine(path, "DataSet", "DBSql.xml");
             DataSet ds = new DataSet();
             ds.ReadXml(path);
@@ -92,7 +80,7 @@ namespace WsyXY
             }
 
             //…Ë÷√ª∫¥Ê
-            CacheService.LoadCache();*/
+            //CacheService.LoadCache();
         }
     }
 }

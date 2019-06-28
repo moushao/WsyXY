@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WsyXY.DAO\WsyXY.DAO.csproj" />
+    <ProjectReference Include="..\WsyXY.Model\WsyXY.Model.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="sail.zhang.core.help">
+      <HintPath>..\..\..\..\..\CHGA\CSharp\Lib\sail.zhang.core.help.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
